@@ -1,0 +1,35 @@
+{
+  "sources": [
+    {
+      "name": "AbuseIPDB",
+      "url": "https://api.abuseipdb.com/api/v2/check",
+      "api_key_required": true,
+      "weight": 0.8,
+      "enabled": false
+    },
+    {
+      "name": "VirusTotal",
+      "url": "https://www.virustotal.com/vtapi/v2/ip-address/report",
+      "api_key_required": true,
+      "weight": 0.9,
+      "enabled": false
+    },
+    {
+      "name": "ThreatCrowd",
+      "url": "https://www.threatcrowd.org/searchApi/v2/ip/report/",
+      "api_key_required": false,
+      "weight": 0.6,
+      "enabled": true
+    },
+    {
+      "name": "AlienVault OTX",
+      "url": "https://otx.alienvault.com/api/v1/indicators/IPv4/",
+      "api_key_required": true,
+      "weight": 0.7,
+      "enabled": false
+    }
+  ],
+  "cache_duration": 3600,
+  "timeout": 5,
+  "max_concurrent_checks": 3
+}

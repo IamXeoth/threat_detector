@@ -1,0 +1,70 @@
+{
+  "rules": [
+    {
+      "name": "Critical IP Detection",
+      "type": "malicious_ip",
+      "severity": "CRITICAL",
+      "auto_block": true,
+      "notification_channels": ["webhook", "email", "syslog"]
+    },
+    {
+      "name": "Port Scan Detection", 
+      "type": "port_scan",
+      "severity": "HIGH",
+      "threshold": {
+        "ports": 10,
+        "time_window": 60
+      },
+      "auto_block": false,
+      "notification_channels": ["webhook"]
+    },
+    {
+      "name": "DDoS Attack",
+      "type": "ddos",
+      "severity": "CRITICAL",
+      "threshold": {
+        "connections": 100,
+        "time_window": 60
+      },
+      "auto_block": true,
+      "notification_channels": ["webhook", "email", "sms"]
+    },
+    {
+      "name": "Data Exfiltration",
+      "type": "data_exfiltration",
+      "severity": "HIGH",
+      "threshold": {
+        "bytes": 52428800,
+        "time_window": 300
+      },
+      "auto_block": false,
+      "notification_channels": ["webhook", "email"]
+    },
+    {
+      "name": "Suspicious Port Activity",
+      "type": "suspicious_port",
+      "severity": "MEDIUM",
+      "ports": [1234, 4444, 5555, 6666, 7777, 8080, 9999, 31337],
+      "auto_block": false,
+      "notification_channels": ["webhook"]
+    },
+    {
+      "name": "Bot Behavior",
+      "type": "bot_behavior", 
+      "severity": "MEDIUM",
+      "threshold": {
+        "variance": 0.1,
+        "connections": 20
+      },
+      "auto_block": false,
+      "notification_channels": ["webhook"]
+    }
+  ],
+  "global_settings": {
+    "enable_auto_response": true,
+    "alert_rate_limit": 5,
+    "rate_limit_window": 300,
+    "escalation_enabled": true,
+    "escalation_threshold": 3
+  }
+}

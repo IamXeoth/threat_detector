@@ -1,0 +1,16 @@
+{
+  "generated_at": "2025-07-29T15:30:00Z",
+  "summary": {
+    "total_threats": 15,
+    "critical_threats": 3,
+    "high_threats": 7,
+    "medium_threats": 5
+  },
+  "top_threats": [
+    {
+      "type": "malicious_ip",
+      "count": 8,
+      "severity": "CRITICAL"
+    }
+  ]
+}

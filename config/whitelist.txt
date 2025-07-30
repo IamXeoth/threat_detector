@@ -1,0 +1,28 @@
+; whoami
+| whoami
+`whoami`
+$(whoami)
+; cat /etc/passwd
+| cat /etc/passwd
+; ls -la
+| ls -la
+`cat /etc/passwd`
+$(cat /etc/passwd)
+; id
+| id
+`id`
+$(id)
+; uname -a
+| uname -a
+; netstat -an
+| netstat -an
+; ps aux
+| ps aux
+&& whoami
+|| whoami
+; sleep 5
+| sleep 5
+`sleep 5`
+$(sleep 5)
+
+---

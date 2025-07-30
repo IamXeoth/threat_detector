@@ -1,0 +1,21 @@
+# Enterprise Whitelist - Threat Detector
+# IPs corporativos e parceiros confiáveis
+
+# Infrastructure servers
+192.168.1.0/24
+10.0.0.0/16
+172.16.0.0/12
+
+# Partner networks
+203.0.113.0/24
+198.51.100.0/24
+
+# Cloud providers
+52.0.0.0/8
+13.0.0.0/8
+
+# Monitoring tools
+192.168.100.1
+192.168.100.2
+
+---

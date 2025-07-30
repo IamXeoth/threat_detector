@@ -1,0 +1,94 @@
+{
+  "webhook_templates": {
+    "slack": {
+      "url": "https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK",
+      "format": {
+        "text": "🚨 Security Alert: {severity}",
+        "attachments": [
+          {
+            "color": "{color}",
+            "fields": [
+              {
+                "title": "Threat Type",
+                "value": "{type}",
+                "short": true
+              },
+              {
+                "title": "Source IP", 
+                "value": "{source_ip}",
+                "short": true
+              },
+              {
+                "title": "Description",
+                "value": "{description}",
+                "short": false
+              },
+              {
+                "title": "Timestamp",
+                "value": "{timestamp}",
+                "short": true
+              },
+              {
+                "title": "Confidence",
+                "value": "{confidence}%",
+                "short": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "teams": {
+      "url": "https://outlook.office.com/webhook/YOUR/TEAMS/WEBHOOK",
+      "format": {
+        "@type": "MessageCard",
+        "@context": "http://schema.org/extensions",
+        "themeColor": "{color}",
+        "summary": "Security Alert: {type}",
+        "sections": [
+          {
+            "activityTitle": "🚨 Network Threat Detected",
+            "activitySubtitle": "{severity} severity alert",
+            "facts": [
+              {
+                "name": "Threat Type:",
+                "value": "{type}"
+              },
+              {
+                "name": "Source IP:",
+                "value": "{source_ip}"
+              },
+              {
+                "name": "Description:",
+                "value": "{description}"
+              },
+              {
+                "name": "Confidence:",
+                "value": "{confidence}%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "generic": {
+      "url": "https://your-server.com/api/alerts",
+      "format": {
+        "alert_type": "network_threat",
+        "severity": "{severity}",
+        "threat_type": "{type}",
+        "source_ip": "{source_ip}",
+        "description": "{description}",
+        "timestamp": "{timestamp}",
+        "confidence": "{confidence}",
+        "details": "{details}"
+      }
+    }
+  },
+  "color_mapping": {
+    "CRITICAL": "#ff0000",
+    "HIGH": "#ff6600", 
+    "MEDIUM": "#ffcc00",
+    "LOW": "#00ff00"
+  }
+}
