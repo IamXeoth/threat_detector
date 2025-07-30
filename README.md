@@ -131,6 +131,7 @@ Este detector:
 - Pode gerar logs extensos
 - Consome recursos do sistema
 - Pode bloquear IPs automaticamente
+- Se for replicar, trocar os exemplos, óbvio
 
 ## Requisitos
 
