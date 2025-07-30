@@ -1,0 +1,32 @@
+cat > .gitignore << 'EOF'
+# Logs de monitoramento
+*.log
+threat_detector.log
+continuous_logs/
+incident_*.log
+enterprise_*.log
+threat_hunting_*.log
+
+# Relatórios gerados
+*.json
+threat_report_*
+hunting_report_*
+
+# Dados temporários
+/tmp/
+*.tmp
+*.pid
+
+# Configurações sensíveis
+config/api_keys.txt
+config/secrets.conf
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+EOF
